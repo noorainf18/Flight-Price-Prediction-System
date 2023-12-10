@@ -13,7 +13,7 @@ st.set_page_config(
 )
 
 #Load the Saved Model
-predictor = pickle.load(open('D:\\Projects\\Github\\Flight Price Prediction\\predictor_model.sav', 'rb'))
+predictor = pickle.load(open('predictor_model.sav', 'rb'))
 
 #Function for Prediction
 def flight_price(predictive_input):
@@ -27,7 +27,7 @@ def main():
     #Title
     st.title('Flight Price Prediction System')
 
-    df = pd.read_csv("D:\\Projects\\Github\\Flight Price Prediction\\Clean_Dataset.csv")
+    df = pd.read_csv("Clean_Dataset.csv")
 
     airline_options_list = df.airline.unique().tolist()
     le = LabelEncoder()
